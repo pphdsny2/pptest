@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000" >
+
+    <RelativeLayout
+        android:id="@+id/rl_menu_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="#434343" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="选择"
+            android:textColor="@color/text_menu_color"
+            android:textSize="@dimen/text_large_24" />
+
+        <ImageView
+            android:id="@+id/iv_choice_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:src="@drawable/icon_choice_reset" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rl_menu_title"
+        android:padding="15dp" >
+
+        <!-- 评分 -->
+
+        <RelativeLayout
+            android:id="@+id/rl_source"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv_source"
+                style="@style/text_menu_title_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="餐厅评分" />
+
+            <TextView
+                style="@style/text_menu_note_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_source"
+                android:layout_marginTop="3dp"
+                android:text="(点击图标可调整)" />
+
+            <RatingBar
+                android:id="@+id/rb_star"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:numStars="5"
+                android:progressDrawable="@drawable/retarturs_rating_bar"
+                android:rating="3"
+                android:stepSize="1" />
+        </RelativeLayout>
+
+        <!-- 消费水平 -->
+
+        <RelativeLayout
+            android:id="@+id/rl_consumption"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_source"
+            android:layout_marginTop="@dimen/menu_margin_top" >
+
+            <TextView
+                android:id="@+id/tv_consumption"
+                style="@style/text_menu_title_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="消费水平" />
+
+            <!-- 可调价区域 -->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignBottom="@id/tv_consumption"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tv_consumption" >
+
+                <TextView
+                    android:id="@+id/tv_min_menoy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="$0"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_12" />
+
+                <TextView
+                    android:id="@+id/tv_max_menoy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="$56"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_12" />
+
+                <LinearLayout
+                    android:id="@+id/ll_range_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_toLeftOf="@id/tv_max_menoy"
+                    android:layout_toRightOf="@id/tv_min_menoy"
+                    android:orientation="horizontal" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- 菜系类别 -->
+
+        <RelativeLayout
+            android:id="@+id/rl_food_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_consumption"
+            android:layout_marginTop="@dimen/menu_margin_top"
+            android:paddingTop="@dimen/menu_margin_top" >
+
+            <TextView
+                android:id="@+id/tv_type_title"
+                style="@style/text_menu_title_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="菜系类别" />
+
+            <TextView
+                style="@style/text_menu_note_style"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignBottom="@id/tv_type_title"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tv_type_title"
+                android:gravity="center_vertical"
+                android:text="(点击菜系名称进行筛选)" />
+
+            <!-- detail type -->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_type_title" >
+
+                <ImageView
+                    android:id="@+id/iv_choice_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_choice_arrow" />
+
+                <ca.eatto.android.views.MyGridView
+                    android:id="@+id/gv_food_type"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/iv_choice_more"
+                    android:horizontalSpacing="5dp"
+                    android:listSelector="@null"
+                    android:numColumns="3"
+                    android:verticalSpacing="5dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <!-- 其他选项 -->
+
+        <RelativeLayout
+            android:id="@+id/rl_other_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_food_type"
+            android:layout_marginTop="@dimen/menu_margin_top"
+            android:paddingTop="@dimen/menu_margin_top" >
+
+            <TextView
+                android:id="@+id/tv_other_type_title"
+                style="@style/text_menu_title_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="其他选项" />
+
+            <TextView
+                style="@style/text_menu_note_style"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignBottom="@id/tv_other_type_title"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tv_other_type_title"
+                android:gravity="center_vertical"
+                android:text="(点击选项名称进行筛选)" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_other_type_title" >
+
+                <ca.eatto.android.views.MyGridView
+                    android:id="@+id/gv_other_type"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="5dp"
+                    android:listSelector="@null"
+                    android:numColumns="3"
+                    android:verticalSpacing="5dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

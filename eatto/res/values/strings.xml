@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">eatto</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- menudrawer -->
+    <string name="md__drawerOpenIndicatorDesc">Close drawer</string>
+    <string name="md__drawerClosedIndicatorDesc">Open drawer</string>
+    
+    <!-- note -->
+    <string name="note_restaurant_desc">菜系：%1$s&#160;&#160;人均：%2$s</string>
+    <string name="note_search_hint">搜索餐厅</string>
+
+</resources>

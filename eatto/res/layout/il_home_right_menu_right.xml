@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000" >
+
+    <RelativeLayout
+        android:id="@+id/rl_more_menu_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="#434343" >
+
+        <ImageView
+            android:id="@+id/iv_choice_more_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="15dp"
+            android:src="@drawable/icon_choice_more_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="菜系类别"
+            android:textColor="@color/text_menu_color"
+            android:textSize="@dimen/text_large_24" />
+
+        <ImageView
+            android:id="@+id/iv_choice_more_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/icon_choice_more_delete" />
+    </RelativeLayout>
+
+    <ca.eatto.android.views.PinnedHeaderListView
+        android:id="@+id/lv_more_type"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rl_more_menu_title"
+        android:listSelector="@drawable/empty_selector"
+        android:scrollbars="none" >
+    </ca.eatto.android.views.PinnedHeaderListView>
+
+</RelativeLayout>

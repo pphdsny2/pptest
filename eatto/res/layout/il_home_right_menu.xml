@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rl_menu_buttom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/icon_choice_banner" >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/rl_menu_buttom" >
+
+        <include
+            android:id="@+id/rl_menu_left"
+            layout="@layout/il_home_right_menu_left" />
+
+        <include
+            android:id="@+id/rl_menu_right"
+            android:layout_toRightOf="@id/rl_menu_left"
+            layout="@layout/il_home_right_menu_right"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

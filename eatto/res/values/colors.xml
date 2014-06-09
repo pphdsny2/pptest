@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <!-- The default background of the menu. -->
+    <color name="md__defaultBackground">#FF555555</color>
+    <color name="title_color">#ff9500</color>
+    <color name="button_tab_color">#ffa322</color>
+    <color name="list_item_line_color">#dddddd</color>
+
+    <!-- text color -->
+    <color name="text_title_color">#666666</color>
+    <color name="text_content_color">#666666</color>
+    <color name="text_link_color">#64acd5</color>
+    <color name="text_org_color">#ff9500</color>
+    <color name="text_gray_color">#828282</color>
+    <color name="text_small_gray_color">#c8c8c8</color>
+    <color name="text_menu_color">#bcbab8</color>
+
+    <drawable name="menu_select">#000000</drawable>
+
+</resources>

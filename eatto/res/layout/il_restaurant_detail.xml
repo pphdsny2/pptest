@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:paddingLeft="10dp" >
+
+            <ImageView
+                android:id="@+id/iv_title_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_back" />
+
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_title_back"
+                android:text="餐厅搜索"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_defalut_16" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_title_sahre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_share" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="餐厅信息"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_large_24"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- 详细信息 -->
+
+    <ScrollView
+        android:id="@+id/sv_restaurant_detail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_title"
+        android:scrollbars="none" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <!-- banner -->
+
+            <RelativeLayout
+                android:id="@+id/rl_banner"
+                android:layout_width="fill_parent"
+                android:layout_height="130dp" >
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_banner" />
+
+                <ImageView
+                    android:id="@+id/iv_bannet_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icon_banner_cancel" />
+
+                <!-- 收藏 -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_collect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="10dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_collect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/selector_banner_collect" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_collect"
+                        android:text="收藏餐厅"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_defalut_16" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <!-- 餐厅图片信息 -->
+
+            <Gallery
+                android:id="@+id/gl_image"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_banner"
+                android:layout_margin="@dimen/search_bar_margin" />
+
+            <View
+                android:id="@+id/line_image"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/gl_image"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/list_item_line_color" />
+            <!-- 餐厅的详细信息 -->
+
+            <RelativeLayout
+                android:id="@+id/rl_detail_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_image"
+                android:layout_margin="@dimen/search_bar_margin"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+
+                <TextView
+                    android:id="@+id/tv_detail_title"
+                    style="@style/text_title_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="辛香汇" />
+
+                <RatingBar
+                    android:id="@+id/rb_star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/tv_detail_title"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/tv_detail_title"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressDrawable="@drawable/retarturs_rating_bar"
+                    android:rating="3"
+                    android:stepSize="1" />
+
+                <TextView
+                    android:id="@+id/tv_detail_support"
+                    style="@style/text_gray_small_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_detail_title"
+                    android:layout_alignParentRight="true"
+                    android:text="外带/送餐" />
+                <!-- 餐厅类型和消费 -->
+
+                <TextView
+                    android:id="@+id/tv_detail_type"
+                    style="@style/text_content_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_detail_title"
+                    android:layout_marginTop="3dp"
+                    android:text="菜系：川菜  人均：$20" />
+                <!-- 位置 -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_map"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_detail_type"
+                    android:layout_marginTop="10dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/icon_restaurant_map" />
+
+                    <TextView
+                        android:id="@+id/tv_map"
+                        style="@style/text_content_link_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/iv_map"
+                        android:text="4664 Yonge St Toronto, ON, Canada M2N5N1" />
+                </RelativeLayout>
+                <!-- 电话 -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_tel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_map"
+                    android:layout_marginTop="10dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/icon_restaurant_tel" />
+
+                    <TextView
+                        android:id="@+id/tv_tel"
+                        style="@style/text_content_link_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/iv_tel"
+                        android:text="416-890-678" />
+                </RelativeLayout>
+                <!-- 营业时间 -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_clock"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_tel"
+                    android:layout_marginTop="10dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_clock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/icon_restaurant_clock" />
+
+                    <TextView
+                        android:id="@+id/tv_clock_title"
+                        style="@style/text_content_org_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/iv_clock"
+                        android:text="今日营业时间" />
+
+                    <TextView
+                        android:id="@+id/tv_clock_content"
+                        style="@style/text_content_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_clock_title"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_toRightOf="@id/iv_clock"
+                        android:text="12:00 PM-10:00 PM" />
+                </RelativeLayout>
+                <!-- 推荐菜品 -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_comment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_clock"
+                    android:layout_marginTop="10dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/icon_restaurant_comment" />
+
+                    <TextView
+                        android:id="@+id/tv_comment_title"
+                        style="@style/text_content_org_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/iv_comment"
+                        android:text="推荐菜品" />
+
+                    <TextView
+                        android:id="@+id/tv_comment_content"
+                        style="@style/text_content_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_comment_title"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_toRightOf="@id/iv_comment"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="馋嘴牛蛙, 香辣鸡脆骨, 鱼香肉丝，宫保鸡丁, 铁板牛柳, 奇香嫩牛肉 ,麻辣，全鱼宴，还有很多精品等你来探索哦" />
+                </RelativeLayout>
+                <!-- 更多 -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_more"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_comment"
+                    android:layout_marginTop="10dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:src="@drawable/icon_restaurant_more" />
+
+                    <TextView
+                        android:id="@+id/tv_more"
+                        style="@style/text_content_link_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/iv_more"
+                        android:text="更多" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/line_detail_info"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@id/rl_more"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/list_item_line_color" />
+            </RelativeLayout>
+            <!-- 评论 -->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_detail_info"
+                android:layout_margin="@dimen/search_bar_margin"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+
+                <ImageView
+                    android:id="@+id/iv_discuss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:src="@drawable/icon_restaurant_discuss" />
+
+                <TextView
+                    android:id="@+id/tv_discuss"
+                    style="@style/text_content_org_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/iv_discuss"
+                    android:text="评论" />
+
+                <ListView
+                    android:id="@+id/lv_discuss"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_discuss"
+                    android:divider="@color/list_item_line_color"
+                    android:dividerHeight="0.5dp" >
+                </ListView>
+            </RelativeLayout>
+            <!--  -->
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

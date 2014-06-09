@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="102dp" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:src="@drawable/default_icon" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_icon" >
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/text_title_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="辛香汇" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                style="@style/text_content_org_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_name"
+                android:layout_alignParentRight="true"
+                android:text="2.4KM" />
+
+            <RatingBar
+                android:id="@+id/rb_star"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@id/tv_name"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressDrawable="@drawable/retarturs_rating_bar"
+                android:rating="4"
+                android:stepSize="1" />
+
+            <TextView
+                android:id="@+id/tv_detail_desc"
+                style="@style/text_content_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rb_star"
+                android:text="菜系：川菜  人均：$20" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

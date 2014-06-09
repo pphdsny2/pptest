@@ -1,0 +1,85 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- menudrawer -->
+    <style name="Widget" />
+
+    <!-- Base theme for the menu drawer. -->
+    <style name="Widget.MenuDrawer">
+        <item name="mdMenuBackground">@color/md__defaultBackground</item>
+        <item name="mdContentBackground">?android:attr/windowBackground</item>
+        <item name="mdDrawerOpenUpContentDescription">@string/md__drawerOpenIndicatorDesc</item>
+        <item name="mdDrawerClosedUpContentDescription">@string/md__drawerClosedIndicatorDesc</item>
+    </style>
+    <!-- end menudrawer -->
+
+
+    <!-- text style -->
+    <style name="text_title_style">
+        <item name="android:textColor">@color/text_title_color</item>
+        <item name="android:textSize">@dimen/text_large_24</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_content_org_style">
+        <item name="android:textColor">@color/text_org_color</item>
+        <item name="android:textSize">@dimen/text_defalut_16</item>
+    </style>
+
+    <style name="text_content_style">
+        <item name="android:textColor">@color/text_content_color</item>
+        <item name="android:textSize">@dimen/text_defalut_16</item>
+    </style>
+
+    <style name="text_content_link_style">
+        <item name="android:textColor">@color/text_link_color</item>
+        <item name="android:textSize">@dimen/text_defalut_16</item>
+    </style>
+
+    <style name="text_middle_style">
+        <item name="android:textColor">@color/text_gray_color</item>
+        <item name="android:textSize">@dimen/text_middle_14</item>
+    </style>
+
+    <style name="text_gray_small_style">
+        <item name="android:textColor">@color/text_small_gray_color</item>
+        <item name="android:textSize">@dimen/text_small_10</item>
+    </style>
+
+    <style name="text_gray_little_style">
+        <item name="android:textColor">@color/text_small_gray_color</item>
+        <item name="android:textSize">@dimen/text_little_8</item>
+    </style>
+
+    <style name="text_menu_title_style">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_20</item>
+    </style>
+
+    <style name="text_menu_note_style">
+        <item name="android:textColor">@color/text_menu_color</item>
+        <item name="android:textSize">@dimen/text_12</item>
+    </style>
+
+    <style name="text_menu_type_style">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+</resources>

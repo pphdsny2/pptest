@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <!-- 头部导航 -->
+
+    <RelativeLayout
+        android:id="@+id/home_top"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_color" >
+
+        <ImageView
+            android:id="@+id/iv_home_search"
+            android:layout_width="@dimen/title_height"
+            android:layout_height="@dimen/title_height"
+            android:scaleType="centerInside"
+            android:src="@drawable/top_search" />
+
+        <ImageView
+            android:id="@+id/iv_home_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/top_logo" />
+
+        <ImageView
+            android:id="@+id/iv_home_right_menu"
+            android:layout_width="@dimen/title_height"
+            android:layout_height="@dimen/title_height"
+            android:layout_alignParentRight="true"
+            android:scaleType="center"
+            android:src="@drawable/top_more" />
+    </RelativeLayout>
+
+    <!-- 底部tab -->
+
+    <LinearLayout
+        android:id="@+id/home_buttom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/home_bottom_tab_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/button_tab_color"
+        android:orientation="horizontal"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp" >
+
+        <ImageView
+            android:id="@+id/tab_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/selector_bottom_list" />
+
+        <ImageView
+            android:id="@+id/tab_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/selector_bottom_map" />
+
+        <ImageView
+            android:id="@+id/tab_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/selector_bottom_collect" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_primary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/home_buttom"
+        android:layout_below="@id/home_top" />
+
+</RelativeLayout>
