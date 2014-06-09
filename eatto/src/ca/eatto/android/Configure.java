@@ -7,6 +7,7 @@ package ca.eatto.android;
  */
 public interface Configure {
 	
+	
 	//home fragment tag
 	int HOME_LIST_FRAGMENT = 1;
 	int HOME_MAP_FRAGMENT = 2;
